@@ -15,8 +15,12 @@
     "./styles.css": "./strata.css"
   },
   "files": ["dist", "strata.css"],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "node scripts/build-tokens.mjs && tsup",
+    "prepublishOnly": "pnpm build",
     "typecheck": "node scripts/build-tokens.mjs && tsc --noEmit",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",

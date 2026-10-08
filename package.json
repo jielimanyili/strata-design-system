@@ -1,10 +1,17 @@
 {
   "name": "strata",
   "private": true,
-  "description": "Strata — a layered design system monorepo: @jieli/strata (design tokens + React components) + a demo app.",
+  "description": "Strata — a layered design system monorepo: @jieli/strata-ui (design tokens + React components) + a demo app.",
+  "packageManager": "pnpm@9.15.9",
   "scripts": {
     "build": "pnpm --filter @jieli/strata-ui build && pnpm --filter strata-demo build",
     "dev": "pnpm --filter strata-demo dev",
-    "typecheck": "pnpm -r --if-present run typecheck"
+    "typecheck": "pnpm -r --if-present run typecheck",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^3.0.3"
   }
 }
