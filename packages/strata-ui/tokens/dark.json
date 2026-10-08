@@ -1,0 +1,9 @@
+{
+  "color": {
+    "background": { "value": "#0f172a" },
+    "foreground": { "value": "#f1f5f9" },
+    "muted": { "value": "#1e293b" },
+    "mutedForeground": { "value": "#94a3b8" },
+    "border": { "value": "#334155" }
+  }
+}

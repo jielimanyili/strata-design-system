@@ -1,0 +1,332 @@
+/* Generated from tokens/*.json by scripts/build-tokens.mjs — do not edit. */
+
+:root {
+  --strata-color-primary-50: #eef4ff;
+  --strata-color-primary-100: #d9e6ff;
+  --strata-color-primary-500: #2563eb;
+  --strata-color-primary-600: #1d4ed8;
+  --strata-color-primary-700: #1e40af;
+  --strata-color-gray-50: #f8fafc;
+  --strata-color-gray-100: #f1f5f9;
+  --strata-color-gray-200: #e2e8f0;
+  --strata-color-gray-300: #cbd5e1;
+  --strata-color-gray-500: #64748b;
+  --strata-color-gray-700: #334155;
+  --strata-color-gray-900: #0f172a;
+  --strata-color-background: #ffffff;
+  --strata-color-foreground: #0f172a;
+  --strata-color-muted: #f1f5f9;
+  --strata-color-muted-foreground: #64748b;
+  --strata-color-border: #e2e8f0;
+  --strata-color-accent: #2563eb;
+  --strata-color-accent-foreground: #ffffff;
+  --strata-color-destructive: #dc2626;
+  --strata-space-1: 4px;
+  --strata-space-2: 8px;
+  --strata-space-3: 12px;
+  --strata-space-4: 16px;
+  --strata-space-5: 20px;
+  --strata-space-6: 24px;
+  --strata-space-8: 32px;
+  --strata-radius-sm: 6px;
+  --strata-radius-md: 10px;
+  --strata-radius-lg: 14px;
+  --strata-radius-full: 9999px;
+  --strata-font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --strata-font-size-sm: 0.875rem;
+  --strata-font-size-base: 1rem;
+  --strata-font-size-lg: 1.125rem;
+  --strata-font-size-xl: 1.5rem;
+  --strata-font-weight-medium: 500;
+  --strata-font-weight-semibold: 600;
+  --strata-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.05);
+  --strata-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.strata-dark, [data-theme="dark"] {
+  --strata-color-background: #0f172a;
+  --strata-color-foreground: #f1f5f9;
+  --strata-color-muted: #1e293b;
+  --strata-color-muted-foreground: #94a3b8;
+  --strata-color-border: #334155;
+}
+
+/* ------------------------------------------------------------------ */
+/* Component styles — consume design tokens (var(--strata-*)) only.    */
+/* These are appended to the generated token CSS by build-tokens.mjs.  */
+/* ------------------------------------------------------------------ */
+
+/* Button */
+.strata-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--strata-space-2);
+  font-family: var(--strata-font-sans);
+  font-weight: var(--strata-font-weight-medium);
+  border-radius: var(--strata-radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+.strata-button:focus-visible {
+  outline: 2px solid var(--strata-color-accent);
+  outline-offset: 2px;
+}
+.strata-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.strata-button--primary {
+  background: var(--strata-color-accent);
+  color: var(--strata-color-accent-foreground);
+}
+.strata-button--primary:hover:not(:disabled) {
+  background: var(--strata-color-primary-600);
+}
+
+.strata-button--secondary {
+  background: var(--strata-color-muted);
+  color: var(--strata-color-foreground);
+  border-color: var(--strata-color-border);
+}
+.strata-button--secondary:hover:not(:disabled) {
+  background: var(--strata-color-gray-200);
+}
+
+.strata-button--ghost {
+  background: transparent;
+  color: var(--strata-color-foreground);
+}
+.strata-button--ghost:hover:not(:disabled) {
+  background: var(--strata-color-muted);
+}
+
+.strata-button--sm { height: 32px; padding: 0 var(--strata-space-3); font-size: var(--strata-font-size-sm); }
+.strata-button--md { height: 40px; padding: 0 var(--strata-space-4); font-size: var(--strata-font-size-base); }
+.strata-button--lg { height: 48px; padding: 0 var(--strata-space-6); font-size: var(--strata-font-size-lg); }
+
+/* Card */
+.strata-card {
+  background: var(--strata-color-background);
+  color: var(--strata-color-foreground);
+  border: 1px solid var(--strata-color-border);
+  border-radius: var(--strata-radius-lg);
+  box-shadow: var(--strata-shadow-sm);
+  padding: var(--strata-space-5);
+}
+.strata-card--title {
+  font-size: var(--strata-font-size-lg);
+  font-weight: var(--strata-font-weight-semibold);
+  margin: 0 0 var(--strata-space-2);
+}
+.strata-card--description {
+  color: var(--strata-color-muted-foreground);
+  margin: 0;
+}
+
+/* Input */
+.strata-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 var(--strata-space-3);
+  font-family: var(--strata-font-sans);
+  font-size: var(--strata-font-size-base);
+  color: var(--strata-color-foreground);
+  background: var(--strata-color-background);
+  border: 1px solid var(--strata-color-border);
+  border-radius: var(--strata-radius-md);
+}
+.strata-input::placeholder {
+  color: var(--strata-color-muted-foreground);
+}
+.strata-input:focus {
+  outline: none;
+  border-color: var(--strata-color-accent);
+  box-shadow: 0 0 0 3px var(--strata-color-primary-100);
+}
+
+/* ------------------------------------------------------------------ */
+/* Dialog                                                              */
+/* ------------------------------------------------------------------ */
+.strata-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 0.5);
+  z-index: 50;
+}
+.strata-dialog-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 2rem);
+  max-width: 420px;
+  background: var(--strata-color-background);
+  color: var(--strata-color-foreground);
+  border: 1px solid var(--strata-color-border);
+  border-radius: var(--strata-radius-lg);
+  box-shadow: var(--strata-shadow-md);
+  padding: var(--strata-space-5);
+  z-index: 51;
+}
+.strata-dialog-title {
+  font-size: var(--strata-font-size-lg);
+  font-weight: var(--strata-font-weight-semibold);
+  margin: 0 0 var(--strata-space-2);
+}
+.strata-dialog-description {
+  color: var(--strata-color-muted-foreground);
+  margin: 0 0 var(--strata-space-5);
+}
+.strata-dialog-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 var(--strata-space-4);
+  font-family: var(--strata-font-sans);
+  font-weight: var(--strata-font-weight-medium);
+  font-size: var(--strata-font-size-sm);
+  border-radius: var(--strata-radius-md);
+  border: 1px solid var(--strata-color-border);
+  background: var(--strata-color-muted);
+  color: var(--strata-color-foreground);
+  cursor: pointer;
+}
+.strata-dialog-close:hover {
+  background: var(--strata-color-gray-200);
+}
+
+/* ------------------------------------------------------------------ */
+/* Tabs                                                                */
+/* ------------------------------------------------------------------ */
+.strata-tabs-list {
+  position: relative;
+  display: inline-flex;
+  gap: var(--strata-space-1);
+  border-bottom: 1px solid var(--strata-color-border);
+}
+.strata-tabs-tab {
+  padding: var(--strata-space-2) var(--strata-space-4);
+  font-family: var(--strata-font-sans);
+  font-size: var(--strata-font-size-sm);
+  color: var(--strata-color-muted-foreground);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.strata-tabs-tab[data-selected] {
+  color: var(--strata-color-foreground);
+  font-weight: var(--strata-font-weight-semibold);
+}
+.strata-tabs-indicator {
+  position: absolute;
+  bottom: -1px;
+  height: 2px;
+  background: var(--strata-color-accent);
+  border-radius: 2px;
+  left: var(--active-tab-left);
+  width: var(--active-tab-width);
+  transition: left 150ms ease, width 150ms ease;
+}
+.strata-tabs-panel {
+  padding: var(--strata-space-4) 0;
+  color: var(--strata-color-foreground);
+  font-size: var(--strata-font-size-base);
+}
+
+/* ------------------------------------------------------------------ */
+/* Tooltip                                                             */
+/* ------------------------------------------------------------------ */
+.strata-tooltip-popup {
+  padding: var(--strata-space-2) var(--strata-space-3);
+  background: var(--strata-color-foreground);
+  color: var(--strata-color-background);
+  font-family: var(--strata-font-sans);
+  font-size: var(--strata-font-size-sm);
+  border-radius: var(--strata-radius-sm);
+  max-width: 240px;
+}
+.strata-tooltip-arrow {
+  fill: var(--strata-color-foreground);
+}
+
+/* ------------------------------------------------------------------ */
+/* Badge                                                               */
+/* ------------------------------------------------------------------ */
+.strata-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--strata-space-2);
+  font-family: var(--strata-font-sans);
+  font-size: var(--strata-font-size-sm);
+  font-weight: var(--strata-font-weight-medium);
+  border-radius: var(--strata-radius-full);
+  border: 1px solid transparent;
+}
+.strata-badge--default { background: var(--strata-color-muted); color: var(--strata-color-foreground); }
+.strata-badge--primary { background: var(--strata-color-accent); color: var(--strata-color-accent-foreground); }
+.strata-badge--outline { background: transparent; color: var(--strata-color-foreground); border-color: var(--strata-color-border); }
+.strata-badge--destructive { background: var(--strata-color-destructive); color: #ffffff; }
+
+/* ------------------------------------------------------------------ */
+/* Select                                                              */
+/* ------------------------------------------------------------------ */
+.strata-select-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--strata-space-2);
+  height: 40px;
+  min-width: 180px;
+  padding: 0 var(--strata-space-3);
+  font-family: var(--strata-font-sans);
+  font-size: var(--strata-font-size-base);
+  color: var(--strata-color-foreground);
+  background: var(--strata-color-background);
+  border: 1px solid var(--strata-color-border);
+  border-radius: var(--strata-radius-md);
+  cursor: pointer;
+}
+.strata-select-trigger:focus-visible {
+  outline: none;
+  border-color: var(--strata-color-accent);
+  box-shadow: 0 0 0 3px var(--strata-color-primary-100);
+}
+.strata-select-value {
+  flex: 1;
+  text-align: left;
+}
+.strata-select-popup {
+  min-width: var(--anchor-width);
+  max-height: 280px;
+  overflow: auto;
+  background: var(--strata-color-background);
+  border: 1px solid var(--strata-color-border);
+  border-radius: var(--strata-radius-md);
+  box-shadow: var(--strata-shadow-md);
+  padding: var(--strata-space-1);
+}
+.strata-select-item {
+  display: flex;
+  align-items: center;
+  gap: var(--strata-space-2);
+  padding: var(--strata-space-2) var(--strata-space-3);
+  font-family: var(--strata-font-sans);
+  font-size: var(--strata-font-size-base);
+  color: var(--strata-color-foreground);
+  border-radius: var(--strata-radius-sm);
+  cursor: pointer;
+}
+.strata-select-item[data-highlighted] {
+  background: var(--strata-color-muted);
+}
+.strata-select-item[data-selected] {
+  font-weight: var(--strata-font-weight-medium);
+}
+.strata-select-item-indicator {
+  margin-left: auto;
+  color: var(--strata-color-accent);
+}

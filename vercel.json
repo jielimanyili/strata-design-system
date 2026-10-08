@@ -1,0 +1,5 @@
+{
+  "buildCommand": "pnpm --filter @jieli/strata-ui build && pnpm --filter strata-demo build",
+  "outputDirectory": "apps/demo/dist",
+  "installCommand": "pnpm install --no-frozen-lockfile"
+}

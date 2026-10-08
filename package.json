@@ -1,0 +1,10 @@
+{
+  "name": "strata",
+  "private": true,
+  "description": "Strata — a layered design system monorepo: @jieli/strata (design tokens + React components) + a demo app.",
+  "scripts": {
+    "build": "pnpm --filter @jieli/strata-ui build && pnpm --filter strata-demo build",
+    "dev": "pnpm --filter strata-demo dev",
+    "typecheck": "pnpm -r --if-present run typecheck"
+  }
+}
