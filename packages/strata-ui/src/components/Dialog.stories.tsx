@@ -5,7 +5,26 @@ import { Dialog } from "./Dialog";
 const meta = {
   title: "Components/Dialog",
   component: Dialog.Root,
-  parameters: { layout: "centered" },
+  parameters: {
+    layout: "centered",
+    docs: {
+      source: {
+        code: `<Dialog.Root>
+  <Dialog.Trigger className="strata-button strata-button--primary">
+    Open dialog
+  </Dialog.Trigger>
+  <Dialog.Portal>
+    <Dialog.Backdrop />
+    <Dialog.Popup>
+      <Dialog.Title>Delete project?</Dialog.Title>
+      <Dialog.Description>This action cannot be undone.</Dialog.Description>
+      <Dialog.Close>Cancel</Dialog.Close>
+    </Dialog.Popup>
+  </Dialog.Portal>
+</Dialog.Root>`,
+      },
+    },
+  },
   tags: ["autodocs"],
 } satisfies Meta<typeof Dialog.Root>;
 

@@ -4,7 +4,28 @@ import { Tooltip } from "./Tooltip";
 const meta = {
   title: "Components/Tooltip",
   component: Tooltip.Root,
-  parameters: { layout: "centered" },
+  parameters: {
+    layout: "centered",
+    docs: {
+      source: {
+        code: `<Tooltip.Provider>
+  <Tooltip.Root>
+    <Tooltip.Trigger className="strata-button strata-button--secondary">
+      Hover me
+    </Tooltip.Trigger>
+    <Tooltip.Portal>
+      <Tooltip.Positioner sideOffset={6}>
+        <Tooltip.Popup>
+          <Tooltip.Arrow />
+          Short hint text
+        </Tooltip.Popup>
+      </Tooltip.Positioner>
+    </Tooltip.Portal>
+  </Tooltip.Root>
+</Tooltip.Provider>`,
+      },
+    },
+  },
   tags: ["autodocs"],
 } satisfies Meta<typeof Tooltip.Root>;
 

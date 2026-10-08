@@ -5,7 +5,24 @@ import { Tabs } from "./Tabs";
 const meta = {
   title: "Components/Tabs",
   component: Tabs.Root,
-  parameters: { layout: "centered" },
+  parameters: {
+    layout: "centered",
+    docs: {
+      source: {
+        code: `<Tabs.Root defaultValue="overview">
+  <Tabs.List>
+    <Tabs.Tab value="overview">Overview</Tabs.Tab>
+    <Tabs.Tab value="projects">Projects</Tabs.Tab>
+    <Tabs.Tab value="account">Account</Tabs.Tab>
+    <Tabs.Indicator />
+  </Tabs.List>
+  <Tabs.Panel value="overview">Workspace stats and activity.</Tabs.Panel>
+  <Tabs.Panel value="projects">Milestones and deadlines.</Tabs.Panel>
+  <Tabs.Panel value="account">Profile and preferences.</Tabs.Panel>
+</Tabs.Root>`,
+      },
+    },
+  },
   tags: ["autodocs"],
 } satisfies Meta<typeof Tabs.Root>;
 
