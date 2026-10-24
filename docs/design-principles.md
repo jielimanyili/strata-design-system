@@ -53,4 +53,6 @@ Run the checklist top-to-bottom on any new surface. A "no" is a blocker, not a n
 
 ## Using this with agents
 
-Ship this file (plus `strata.css`, component docs, and `docs/ARCHITECTURE.md`) as context to an agent so it can check its own output against the criteria before a human looks at it. The checklist lines are written to be machine-evaluable (each is a yes/no observation).
+- **`AGENTS.md`** (repo root) is the agent entry point — build rules + the check-your-work protocol. Agents auto-discover it.
+- **`docs/guidelines.json`** is the same criteria as machine-readable data, each tagged `automated` / `llm` / `human`, so an eval harness (or an agent) can run the checks.
+- Ship `AGENTS.md` + `guidelines.json` + `strata.css` + `docs/ARCHITECTURE.md` as context so an agent can check its own output before a human looks at it.

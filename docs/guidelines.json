@@ -1,0 +1,65 @@
+{
+  "name": "Strata design guidelines",
+  "version": "0.1.0",
+  "description": "Machine-readable evaluation criteria for Strata. Each criterion is a discrete yes/no check with a mode: 'automated' (a lint/test can verify), 'llm' (an agent/LLM self-check), or 'human' (requires design judgment).",
+  "principles": [
+    {
+      "id": "clarity",
+      "name": "Clarity over completeness",
+      "criteria": [
+        { "id": "clarity.1", "check": "A first-time viewer can name the primary action within 5 seconds", "mode": "llm" },
+        { "id": "clarity.2", "check": "Exactly one primary action per region; secondary actions are visually quieter", "mode": "llm" }
+      ]
+    },
+    {
+      "id": "hierarchy",
+      "name": "Hierarchy is typographic, not loud",
+      "criteria": [
+        { "id": "hierarchy.1", "check": "Reading only type styles (ignoring content) reconstructs the page structure", "mode": "llm" },
+        { "id": "hierarchy.2", "check": "Exactly one dominant element; no competing emphasis", "mode": "llm" }
+      ]
+    },
+    {
+      "id": "numbers",
+      "name": "Numbers align and are tabular",
+      "criteria": [
+        { "id": "numbers.1", "check": "All numeric columns right-align; labels left-align", "mode": "llm" },
+        { "id": "numbers.2", "check": "Amounts use font-variant-numeric: tabular-nums (--strata-font-numeric)", "mode": "automated", "where": "grep components.css for --strata-font-numeric" },
+        { "id": "numbers.3", "check": "Deltas use semantic color, and color is never the only signal", "mode": "llm" }
+      ]
+    },
+    {
+      "id": "states",
+      "name": "Every state is designed",
+      "criteria": [
+        { "id": "states.1", "check": "Every data region has an empty and a loading state", "mode": "llm" },
+        { "id": "states.2", "check": "Errors explain what happened and the next step", "mode": "llm" }
+      ]
+    },
+    {
+      "id": "motion",
+      "name": "Motion is meaningful",
+      "criteria": [
+        { "id": "motion.1", "check": "Every animation has a stated reason", "mode": "human" },
+        { "id": "motion.2", "check": "Durations are <= 200ms (--strata-motion-duration-*)", "mode": "automated", "where": "tokens/light.json motion.duration" },
+        { "id": "motion.3", "check": "prefers-reduced-motion is honored", "mode": "automated", "where": "grep components.css for prefers-reduced-motion" }
+      ]
+    },
+    {
+      "id": "accessibility",
+      "name": "Accessible by default",
+      "criteria": [
+        { "id": "accessibility.1", "check": "Full keyboard path through every component (Base UI primitives)", "mode": "automated", "where": "Storybook a11y addon / jest-axe" },
+        { "id": "accessibility.2", "check": "Visible focus ring; contrast meets AA", "mode": "automated", "where": "jest-axe" }
+      ]
+    },
+    {
+      "id": "tokens",
+      "name": "Tokens are the only source of truth",
+      "criteria": [
+        { "id": "tokens.1", "check": "No literal hex/px/shadow values in component CSS", "mode": "automated", "where": "grep src/styles/components.css" },
+        { "id": "tokens.2", "check": "New values are added to tokens/*.json, not inline", "mode": "human" }
+      ]
+    }
+  ]
+}

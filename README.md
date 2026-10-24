@@ -6,6 +6,8 @@ A layered design system, built to demonstrate end-to-end design-system engineeri
 
 - `packages/strata-ui` — `@jieli/strata-ui`, the design system (design tokens as CSS variables + React components).
 - `apps/demo` — a Vite + React app that consumes `@jieli/strata`.
+- `AGENTS.md` — guidance for AI agents (build rules + check-your-work).
+- `docs/design-principles.md` + `docs/guidelines.json` — evaluation criteria (human + machine-readable).
 
 ## Commands
 
