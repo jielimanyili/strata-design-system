@@ -45,3 +45,53 @@
   margin-top: var(--strata-space-4);
 }
 
+
+/* Reference experience — spend overview */
+.demo-view {
+  display: flex;
+  align-items: center;
+  gap: var(--strata-space-4);
+  margin-bottom: var(--strata-space-6);
+}
+
+.demo-ref {
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--strata-space-5);
+}
+
+.demo-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--strata-space-4);
+}
+
+.demo-table-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.demo-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--strata-space-4);
+  padding: var(--strata-space-5) var(--strata-space-5) var(--strata-space-4);
+}
+
+.demo-table-card .strata-table-th:first-child,
+.demo-table-card .strata-table-td:first-child {
+  padding-left: var(--strata-space-5);
+}
+.demo-table-card .strata-table-th:last-child,
+.demo-table-card .strata-table-td:last-child {
+  padding-right: var(--strata-space-5);
+}
+
+.demo-states {
+  display: flex;
+  flex-direction: column;
+  gap: var(--strata-space-4);
+  margin-top: var(--strata-space-4);
+}

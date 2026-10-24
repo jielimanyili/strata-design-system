@@ -4,6 +4,11 @@
     "foreground": { "value": "#f1f5f9" },
     "muted": { "value": "#1e293b" },
     "mutedForeground": { "value": "#94a3b8" },
-    "border": { "value": "#334155" }
+    "border": { "value": "#334155" },
+    "success": { "value": "#4ade80" },
+    "successSoft": { "value": "#14532d" },
+    "warning": { "value": "#fbbf24" },
+    "warningSoft": { "value": "#451a03" },
+    "destructiveSoft": { "value": "#450a0a" }
   }
 }

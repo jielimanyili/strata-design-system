@@ -23,7 +23,12 @@
     "border": { "value": "#e2e8f0" },
     "accent": { "value": "#2563eb" },
     "accentForeground": { "value": "#ffffff" },
-    "destructive": { "value": "#dc2626" }
+    "destructive": { "value": "#dc2626" },
+    "destructiveSoft": { "value": "#fee2e2" },
+    "success": { "value": "#16a34a" },
+    "successSoft": { "value": "#dcfce7" },
+    "warning": { "value": "#d97706" },
+    "warningSoft": { "value": "#fef3c7" }
   },
   "space": {
     "1": { "value": "4px" },
@@ -42,19 +47,39 @@
   },
   "font": {
     "sans": { "value": "ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif" },
+    "mono": { "value": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" },
+    "numeric": { "value": "tabular-nums" },
     "size": {
+      "xs": { "value": "0.75rem" },
       "sm": { "value": "0.875rem" },
       "base": { "value": "1rem" },
       "lg": { "value": "1.125rem" },
-      "xl": { "value": "1.5rem" }
+      "xl": { "value": "1.5rem" },
+      "2xl": { "value": "1.875rem" },
+      "3xl": { "value": "2.25rem" }
+    },
+    "lineHeight": {
+      "tight": { "value": "1.25" },
+      "normal": { "value": "1.5" }
     },
     "weight": {
+      "normal": { "value": "400" },
       "medium": { "value": "500" },
-      "semibold": { "value": "600" }
+      "semibold": { "value": "600" },
+      "bold": { "value": "700" }
     }
   },
   "shadow": {
     "sm": { "value": "0 1px 2px rgb(0 0 0 / 0.05)" },
     "md": { "value": "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)" }
+  },
+  "motion": {
+    "duration": {
+      "fast": { "value": "120ms" },
+      "normal": { "value": "200ms" }
+    },
+    "easing": {
+      "standard": { "value": "cubic-bezier(0.2, 0, 0, 1)" }
+    }
   }
 }

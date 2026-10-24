@@ -8,6 +8,8 @@ const badge = cva("strata-badge", {
       primary: "strata-badge--primary",
       outline: "strata-badge--outline",
       destructive: "strata-badge--destructive",
+      success: "strata-badge--success",
+      warning: "strata-badge--warning",
     },
   },
   defaultVariants: { variant: "default" },
