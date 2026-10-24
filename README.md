@@ -26,10 +26,31 @@ pnpm --filter @jieli/strata-ui build-storybook  # build static docs
 
 Tokens live in `packages/strata-ui/tokens/*.json` (light + dark) and are compiled to CSS variables (`--strata-*`) via Style Dictionary (`scripts/build-tokens.mjs`). Components consume tokens — never hard-coded values.
 
-## Deploying
+## Shareable links
 
-- **Demo (Vercel):** `vercel.json` at the repo root builds `@jieli/strata-ui` then the demo, serving `apps/demo/dist`. Deploy with `vercel` (Root Directory = repo root) or connect the repo in the Vercel dashboard.
-- **Storybook (Chromatic):** `pnpm --filter @jieli/strata-ui chromatic` with a `CHROMATIC_PROJECT_TOKEN` env var (see `.env.example`).
+| What | URL |
+|---|---|
+| Repo (public) | https://github.com/jielimanyili/strata-design-system |
+
+### Live demo (Vercel)
+
+`vercel.json` is already configured (builds the lib, then the demo, serves `apps/demo/dist`).
+
+```bash
+pnpm install
+npx vercel            # preview deploy
+npx vercel --prod     # production URL
+```
+
+> In Vercel → Settings → General, set **Node.js version = 22** (the CI pins Node 22).
+
+### Storybook (Chromatic)
+
+```bash
+pnpm --filter @jieli/strata-ui chromatic
+```
+
+> Needs `CHROMATIC_PROJECT_TOKEN` (see `.env.example`). Publishes hosted component docs with visual regression + a11y.
 
 ## Publishing (npm)
 
