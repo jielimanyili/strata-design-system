@@ -1,33 +1,63 @@
-# Figma Integration Plan
+# Figma ↔ Code Integration
 
-How Strata connects Figma (design) to code (tokens). Three phases, each independently valuable.
+How Strata connects Figma (design) to code. The model is **Contract-First**: Git (the deployed,
+versioned artifacts) is the source of truth; Figma is a *capture* surface (designers propose) and a
+*projection* (the canvas mirrors the contract). Full architecture: `references/design-code-workflow.md`.
 
-## Phase 1 — Token codegen pipeline ✅ implemented
+## The model (one line)
 
-Move tokens out of hand-written CSS into a source of truth, and generate the CSS + typed constants.
+> Git is the factory; the deployed versioned artifacts (`tokens.css@v`, `catalogs.json@v`) are the
+> truth; Figma is where designers *propose* changes and where the contract is *projected* back.
 
-- Source of truth: `tokens/light.json` + `tokens/dark.json`
-- Generated: `strata.css` + `src/generated/tokens.ts`
-- Tool: **Style Dictionary** (`scripts/build-tokens.mjs`)
-- No Figma account required.
-- See `docs/adr/adr-006-tokens-codegen.md`.
+## Tokens — Git is the source of truth (implemented)
 
-## Phase 2 — Figma as the source of truth (in progress)
+`tokens/light.json` + `tokens/dark.json` (Git) → Style Dictionary (`scripts/build-tokens.mjs`) →
+`strata.css` + `src/generated/tokens.ts`.
 
-Create a Figma file with **variables** (colors, spacing, radius). Export them as JSON and feed the same pipeline — tokens now originate in design, not in the repo.
+- ✅ Phase 1 — codegen pipeline. See `adr-006-tokens-codegen.md`.
+- **Figma variables are a mirror, not the source**: tokens flow Git → Figma variables (Tokens
+  Studio "sync to variables", or Figma MCP write-to-canvas), never the other way as the authority.
+- A designer *proposing* a token change goes through the PR loop (Loop 1), not by editing Figma
+  variables directly.
 
-- Tools: **Tokens Studio for Figma** (free JSON export), or the **Figma Variables/REST API**.
-- Output: same `tokens/*.json` shape → same generated artifacts (no code changes downstream).
-- ⚠️ **Blocked on your side:** requires a Figma account + ~20 min in the Figma UI (can't be done programmatically without your personal access token). See `docs/figma-tokens-setup.md` for the exact steps and naming convention.
+## Components — the contract has two halves (implemented)
 
-## Phase 3 — Automated sync (planned)
+`scripts/build-catalogs.mjs` generates `dist-catalogs/catalogs.json` from the component sources:
 
-Replace the manual export with a script that pulls tokens programmatically.
+| Half | Contents | Authority |
+|---|---|---|
+| **API** (name, variant enums, defaults) | *derived* from the component `Props` + `cva` definitions | the code — can't drift |
+| **Design intent** (`tokenBindings`, `layout`) | *authored* — captured from Figma (Loop 1) or hand-authored | designer — review-gated |
 
-- Tools: **Figma Variables API** or the official **Figma MCP server** (`figma-developer-mcp`).
-- Needs: a Figma **personal access token** (kept in `.env`, git-ignored).
-- Result: the design↔dev handoff, automated — reproducible in this repo.
+The API half regenerates on every build; the design-intent half is merged in from Figma extractions.
+
+## Two loops (changes always pass through a PR)
+
+### Loop 1 — Designer proposes (Figma → contract)
+Designer edits in Figma → Figma MCP extracts context → agent proposes a **contract diff** →
+validation gate + design review → merge → artifacts re-deployed.
+
+### Loop 2 — Contract deploys (contract → Figma)
+Merge to stable = release → deployed artifacts (`tokens.css@v`, `catalogs.json@v`) → Figma MCP
+**write-to-canvas** regenerates the Figma library (variables + components) = deploy.
+
+## Setup (what you need)
+
+- Figma account + **Tokens Studio for Figma** — token sync (see `docs/figma-tokens-setup.md`).
+- **Code Connect** metadata (`.figma/`) — links each Figma component to its code component.
+- Figma **personal access token** (`.env`, git-ignored) — for the Variables API / MCP automation.
+
+## Phases
+
+1. ✅ **Token codegen** — Git tokens → Style Dictionary → CSS + TS.
+2. ✅ **Component contract** — `build-catalogs.mjs` → `dist-catalogs/catalogs.json`.
+3. ⏳ **Figma mirror** — tokens flow Git → Figma variables.
+4. ⏳ **Figma capture** — Figma MCP extract → contract diff → PR (Loop 1 automation).
+5. ⏳ **Automated sync** — Figma Variables API / MCP for deploy (project) + capture (propose),
+   both gated by the PR.
 
 ## Why this matters
 
-Maps to the role's core mandate: "increase efficiency of the design/engineering handoff," "AI solutions that accelerate design workflows," "distribution and adoption."
+Maps to the role's mandate: "increase efficiency of the design/engineering handoff," "AI solutions
+that accelerate design workflows," "distribution and adoption." Contract-First is the mechanism:
+one source of truth, two mirrors, no drift.
