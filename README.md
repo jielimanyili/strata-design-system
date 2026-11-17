@@ -31,6 +31,7 @@ Tokens live in `packages/strata-ui/tokens/*.json` (light + dark) and are compile
 | What | URL |
 |---|---|
 | Repo (public) | https://github.com/jielimanyili/strata-design-system |
+| Live demo (Vercel) | https://strata-sage-pi.vercel.app |
 
 ### Live demo (Vercel)
 
