@@ -1,0 +1,169 @@
+{
+  "components": [
+    {
+      "name": "Badge",
+      "variants": {
+        "variant": [
+          "default",
+          "primary",
+          "outline",
+          "destructive",
+          "success",
+          "warning"
+        ]
+      },
+      "defaultVariants": {
+        "variant": "default"
+      },
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "Button",
+      "variants": {
+        "variant": [
+          "primary",
+          "secondary",
+          "ghost"
+        ],
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ]
+      },
+      "defaultVariants": {
+        "variant": "primary",
+        "size": "md"
+      },
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "Card",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "CardDescription",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "CardTitle",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "Dialog",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "EmptyState",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "Input",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "Metric",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "SegmentedControl",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "Select",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "Skeleton",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "Table",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "TableBody",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "TableCell",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "TableHead",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "TableHeaderCell",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "TableRow",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "Tabs",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    },
+    {
+      "name": "Tooltip",
+      "variants": {},
+      "defaultVariants": {},
+      "tokenBindings": {},
+      "layout": {}
+    }
+  ]
+}

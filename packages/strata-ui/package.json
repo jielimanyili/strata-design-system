@@ -12,9 +12,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles.css": "./strata.css"
+    "./styles.css": "./strata.css",
+    "./catalogs.json": "./dist-catalogs/catalogs.json"
   },
-  "files": ["dist", "strata.css"],
+  "files": ["dist", "strata.css", "dist-catalogs"],
   "publishConfig": {
     "access": "public"
   },
