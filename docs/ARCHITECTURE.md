@@ -55,6 +55,7 @@ Strata is a **layered design system**: design tokens at the base, primitive comp
 
 - [ ] Storybook (component docs + a11y + interactions)
 - [x] `tokens.json` → CSS/TS codegen via Style Dictionary (see ADR-006)
-- [ ] Figma → tokens pipeline (design↔dev handoff automation)
+- [ ] Figma → tokens pipeline (design↔dev handoff automation) — native Figma Variables (see ADR-009, proposed)
 - [ ] Base UI primitives for Dialog/Tabs/Tooltip (accessibility)
 - [ ] Vitest + Testing Library + jest-axe
+- [ ] `@jieli/strata-lit` — Lit Web Components sharing the same tokens (see ADR-008, proposed)
